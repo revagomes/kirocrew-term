@@ -1,0 +1,14 @@
+{
+  "slug": "kirocrew-term",
+  "name": "Kiro Crew Term (v3)",
+  "emoji": "👻",
+  "level": 1,
+  "formatVersion": 1,
+  "fonts": [
+    { "family": "Inter", "file": "inter-400.woff2", "weight": 400, "role": "sans" },
+    { "family": "Inter", "file": "inter-500.woff2", "weight": 500, "role": "sans" },
+    { "family": "Inter", "file": "inter-600.woff2", "weight": 600, "role": "sans" },
+    { "family": "JetBrains Mono", "file": "jetbrains-mono-400.woff2", "weight": 400, "role": "mono" },
+    { "family": "JetBrains Mono", "file": "jetbrains-mono-600.woff2", "weight": 600, "role": "mono" }
+  ]
+}
