@@ -1,9 +1,12 @@
-/* Kiro Crew Term (v3) — structural touches on allowlisted surfaces only.
- * Runtime allowlist: body (+::before/::after), button.primary, .topbar,
- * .sidebar, .chat-container, .message-bubble, .input-area, .code-block.
- * No fonts here — those are declared via the role system in theme.json. */
+/* Kiro Crew Term (v3) — flat, sharp terminal reskin.
+ * Runtime allowlist (the ONLY surfaces that render): body (+::before/::after),
+ * button.primary, .topbar, .sidebar, .chat-container, .message-bubble,
+ * .input-area, .code-block. No descendant/child selectors, no ids, no
+ * attribute selectors. No fonts here — those come from theme.json's role system.
+ * Design language: 0px radius everywhere, hard 1px borders, flat fills,
+ * ANSI accent, a prompt-line input with a left caret rail. */
 
-/* Faint terminal grain / vignette behind everything. */
+/* ---- Canvas: faint terminal grain + top vignette, anchored to body ---- */
 body {
   position: relative;
 }
@@ -14,41 +17,68 @@ body::before {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(120% 80% at 50% 0%, color-mix(in srgb, var(--accent) 7%, transparent) 0%, transparent 60%),
-    repeating-linear-gradient(0deg, color-mix(in srgb, var(--text) 3%, transparent) 0 1px, transparent 1px 3px);
-  opacity: 0.5;
+    radial-gradient(120% 70% at 50% 0%, color-mix(in srgb, var(--accent) 8%, transparent) 0%, transparent 55%),
+    repeating-linear-gradient(0deg, color-mix(in srgb, var(--text) 4%, transparent) 0 1px, transparent 1px 3px);
+  opacity: 0.55;
 }
 
-/* Topbar reads like a terminal titlebar: hairline accent underline. */
+/* ---- Topbar: terminal titlebar — flat, hard accent underline ---- */
 .topbar {
-  border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
-  box-shadow: 0 1px 0 color-mix(in srgb, var(--accent) 12%, transparent);
+  border-radius: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border-strong));
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--accent) 14%, transparent);
   letter-spacing: 0.02em;
 }
 
-/* Code blocks: blockier, terminal-panel framing. */
-.code-block {
-  border: 1px solid var(--border-strong);
-  border-radius: 6px;
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--bg) 60%, transparent);
+/* ---- Sidebar: flat panel with a hard right seam ---- */
+.sidebar {
+  border-radius: 0;
+  border-right: 1px solid var(--border-strong);
+  background: var(--panel);
 }
 
-/* Input area behaves like a prompt line with an accent caret rail. */
-.input-area {
+/* ---- Chat container: flat canvas, no soft corners ---- */
+.chat-container {
+  border-radius: 0;
+  background: var(--bg);
+}
+
+/* ---- Message bubbles: flat terminal blocks, square, hairline border ---- */
+.message-bubble {
+  border-radius: 0;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--accent) 6%, var(--card));
+  box-shadow: none;
+}
+
+/* ---- Code blocks: hard terminal-panel framing, square ---- */
+.code-block {
+  border-radius: 0;
   border: 1px solid var(--border-strong);
-  border-radius: 8px;
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 0%, transparent);
-  transition: box-shadow 120ms ease, border-color 120ms ease;
+  background: var(--panel-strong);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--bg) 55%, transparent);
+}
+
+/* ---- Input: prompt line — square, left accent caret rail ---- */
+.input-area {
+  border-radius: 0;
+  border: 1px solid var(--border-strong);
+  border-left: 2px solid color-mix(in srgb, var(--accent) 55%, var(--border-strong));
+  background: var(--panel);
+  box-shadow: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
 }
 .input-area:focus-within {
   border-color: var(--accent);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 40%, transparent);
+  border-left-color: var(--accent);
+  box-shadow: inset 2px 0 0 var(--accent);
 }
 
-/* Primary buttons: crisp, terminal-key look. */
+/* ---- Primary button: crisp terminal key — square, flat ---- */
 button.primary {
-  border-radius: 6px;
-  letter-spacing: 0.02em;
+  border-radius: 0;
+  border: 1px solid color-mix(in srgb, var(--accent) 70%, var(--border-strong));
+  letter-spacing: 0.03em;
   font-weight: 600;
-  box-shadow: 0 1px 0 color-mix(in srgb, var(--bg) 40%, transparent);
+  box-shadow: none;
 }
