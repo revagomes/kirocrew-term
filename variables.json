@@ -36,14 +36,7 @@
     "--json-key": "#c6a0ff",
     "--json-str": "#4ec98a",
     "--json-num": "#e5b567",
-    "--json-bool": "#6aa8ff",
-    "--diff-add-bg": "#0e2016",
-    "--diff-add-text": "#7ee2a8",
-    "--diff-add-gutter": "#173a26",
-    "--diff-del-bg": "#25100f",
-    "--diff-del-text": "#f4989b",
-    "--diff-del-gutter": "#3d1a19",
-    "--diff-hunk": "#938f9b"
+    "--json-bool": "#6aa8ff"
   },
   "light": {
     "--bg": "#faf9fc",
@@ -82,13 +75,6 @@
     "--json-key": "#7c4dff",
     "--json-str": "#1f9d57",
     "--json-num": "#b5771a",
-    "--json-bool": "#2f6fd6",
-    "--diff-add-bg": "#e6f6ec",
-    "--diff-add-text": "#12703f",
-    "--diff-add-gutter": "#c8ecd5",
-    "--diff-del-bg": "#fbe9e9",
-    "--diff-del-text": "#a82426",
-    "--diff-del-gutter": "#f2cccd",
-    "--diff-hunk": "#6c6779"
+    "--json-bool": "#2f6fd6"
   }
 }
