@@ -50,6 +50,31 @@ Re-installing overwrites the previous copy — that is the update path.
   accent underline on the topbar, blockier code panels, an accent focus rail on
   the input, and crisp primary buttons — all on runtime-allowlisted surfaces.
 
+## Flat/sharp shape — companion userstyle (optional)
+
+The theme pack recolors the dashboard but **cannot change component shape**
+(radius, borders, layout): the dashboard is built on framework-generated utility
+classes a theme pack is not allowed to target. To get the full flat/sharp
+terminal *structure* shown in the preview, install the companion **userstyle**:
+
+1. Install a userstyle manager — [Stylus](https://add0n.com/stylus.html)
+   (Chrome/Firefox) is recommended.
+2. Open `userstyle/kirocrew-term.user.css` from this repo and install it
+   (Stylus detects the `==UserStyle==` header), **or** paste its contents into a
+   new Stylus style scoped to your dashboard origin.
+3. Adjust the `url-prefix(...)` lines at the top if your dashboard runs on a
+   host/port other than `localhost:5476`.
+
+How it works: the dashboard's rounded corners resolve through its own
+`--radius-*` CSS variables, so the userstyle zeroes those (`--radius-lg: 0`,
+etc.) and squares every surface in one move — verified against the live DOM.
+It changes **shape only**; the palette and fonts still come from the theme pack,
+so the two layers compose.
+
+> This is a per-browser install, not part of the shareable theme pack — that
+> separation is the whole point: colour for everyone via the pack, shape for
+> whoever wants it via the userstyle.
+
 ## Notes
 
 - The System font option always stays the OS font; a theme pack cannot change
