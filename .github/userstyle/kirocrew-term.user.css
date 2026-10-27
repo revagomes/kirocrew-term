@@ -59,7 +59,16 @@
   }
 
   /* ----------------------------------------------------------------------
-   * 4. TERMINAL GRAIN — faint scanline + top vignette on the app canvas.
+   * 4. MESSAGE SPACING — set the agent output wrapper's padding.
+   *    .message-bubble is a real class in the live DOM (confirmed), so this
+   *    targets it directly. Fixed rem keeps it identical in both polarities.
+   * -------------------------------------------------------------------- */
+  .message-bubble.msg-content {
+    padding: 0.6rem 0.85rem !important;
+  }
+
+  /* ----------------------------------------------------------------------
+   * 5. TERMINAL GRAIN — faint scanline + top vignette on the app canvas.
    *    Decorative only; respects reduced-motion (it is static anyway).
    * -------------------------------------------------------------------- */
   body::before {

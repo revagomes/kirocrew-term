@@ -18,6 +18,7 @@
     *,*::before,*::after{border-radius:0 !important;}
     .btn-sweep,button[class*="bg-accent"]{border:1px solid var(--accent) !important;box-shadow:none !important;}
     textarea{border-radius:0 !important;}
+    .message-bubble.msg-content{padding:0.6rem 0.85rem !important;}
     body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
       background:
         radial-gradient(120% 60% at 50% 0%, color-mix(in srgb, var(--accent) 7%, transparent) 0%, transparent 55%),
