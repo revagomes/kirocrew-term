@@ -42,13 +42,18 @@ Re-installing overwrites the previous copy — that is the update path.
 
 ## What it themes
 
-- Full 56-var palette (only the three required vars are mandatory; the rest are
-  tuned so surfaces, borders, JSON syntax, terminal hues, and diffs read like
-  the v3 TUI rather than being auto-derived).
+- Palette of 37 variables per polarity (only the three required vars are
+  mandatory; the rest are tuned so surfaces, borders, JSON syntax, and terminal
+  hues read like the v3 TUI). Diff colors are left to the dashboard to
+  auto-derive from each polarity.
 - Sans face → Sans option; Mono face → Mono option **and** all code surfaces.
-- `styles/overrides.css` adds a faint terminal grain on `body`, a hairline
-  accent underline on the topbar, blockier code panels, an accent focus rail on
-  the input, and crisp primary buttons — all on runtime-allowlisted surfaces.
+- `styles/overrides.css` applies the flat/sharp language on the runtime's
+  allowlisted surfaces: 0px radius and hard borders on `.sidebar`,
+  `.chat-container`, `.message-bubble`, `.code-block`, `.input-area` and
+  `button.primary`, an accent underline on `.topbar`, a left accent caret-rail
+  on the input, and a faint terminal grain on `body`. These are the only
+  surfaces a theme pack can reach — see the companion userstyle below for the
+  rest of the dashboard.
 
 ## Flat/sharp shape — companion userstyle (optional)
 
