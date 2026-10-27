@@ -75,6 +75,22 @@ so the two layers compose.
 > separation is the whole point: colour for everyone via the pack, shape for
 > whoever wants it via the userstyle.
 
+### Desktop app (Electron)
+
+The desktop app has no custom-CSS setting and can't load a Stylus userstyle, so
+use its **DevTools** instead (DevTools must be enabled):
+
+1. Open DevTools in the desktop app.
+2. Paste the contents of `userstyle/console-inject.js` into the **Console** and
+   press Enter — the app goes flat/sharp immediately.
+3. Not persistent across restarts. To avoid re-pasting, save it once as a
+   **DevTools Snippet** (Sources → Snippets) and run it after each launch.
+
+The snippet injects the same radius-zeroing CSS as the userstyle. For a
+fully set-and-forget experience, run the dashboard in a browser with Stylus —
+the desktop app has no supported auto-load hook, and patching its bundled
+assets is unsupported and breaks on update.
+
 ## Notes
 
 - The System font option always stays the OS font; a theme pack cannot change
