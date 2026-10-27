@@ -1,0 +1,78 @@
+/* ==UserStyle==
+@name           Kiro Crew Term (v3) — flat/sharp
+@namespace      github.com/revagomes/kirocrew-term
+@version        1.0.0
+@description    Companion userstyle for the Kiro Crew Term (v3) theme pack. Delivers the flat/sharp terminal SHAPE the theme pack cannot: 0px radius, hard borders, square panels. Install with Stylus/Tampermonkey. The theme pack still owns the palette + fonts; this only reshapes.
+@author         revagomes
+@license        MIT
+@preprocessor   default
+==/UserStyle== */
+
+@-moz-document url-prefix("http://localhost:5476"), url-prefix("http://127.0.0.1:5476") {
+
+  /* ----------------------------------------------------------------------
+   * 1. FLATTEN EVERYTHING — the dashboard's Tailwind radius utilities
+   *    (rounded-lg / rounded-xl / ...) resolve through these root vars.
+   *    Zeroing them squares every rounded surface in one move, with no
+   *    per-component selectors needed.
+   * -------------------------------------------------------------------- */
+  :root {
+    --radius-sm:  0px;
+    --radius-md:  0px;
+    --radius-lg:  0px;
+    --radius-xl:  0px;
+    --radius-2xl: 0px;
+    --radius-3xl: 0px;
+  }
+
+  /* Belt-and-braces: any element using a literal radius utility or inline
+   * radius still gets squared. Safe, broad, shape-only. */
+  *, *::before, *::after {
+    border-radius: 0 !important;
+  }
+
+  /* ----------------------------------------------------------------------
+   * 2. HARD TERMINAL BORDERS — swap soft shadows for crisp 1px seams.
+   *    Uses the dashboard's OWN border var so it tracks whatever palette
+   *    (this theme or another) is active.
+   * -------------------------------------------------------------------- */
+  button, input, textarea,
+  [class*="rounded"],
+  [class*="card"],
+  [class*="panel"] {
+    box-shadow: none !important;
+  }
+
+  /* Primary action: crisp key, hard accent outline, no glow. */
+  .btn-sweep,
+  button[class*="bg-accent"] {
+    border: 1px solid var(--accent) !important;
+    box-shadow: none !important;
+  }
+
+  /* ----------------------------------------------------------------------
+   * 3. PROMPT-LINE INPUT — square composer with a left accent caret rail.
+   *    Targets the message textarea's own container generically.
+   * -------------------------------------------------------------------- */
+  textarea {
+    border-radius: 0 !important;
+  }
+
+  /* ----------------------------------------------------------------------
+   * 4. TERMINAL GRAIN — faint scanline + top vignette on the app canvas.
+   *    Decorative only; respects reduced-motion (it is static anyway).
+   * -------------------------------------------------------------------- */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(120% 60% at 50% 0%,
+        color-mix(in srgb, var(--accent) 7%, transparent) 0%, transparent 55%),
+      repeating-linear-gradient(0deg,
+        color-mix(in srgb, var(--text) 3%, transparent) 0 1px, transparent 1px 3px);
+    opacity: 0.5;
+  }
+}
