@@ -18,7 +18,7 @@ The image below is the **target aesthetic** for the theme across the main
 dashboard screens — flat fills, 0px radius, hard 1px borders, ANSI accents, a
 `❯` prompt and block caret.
 
-![Kiro Crew Term (v3) — design direction across the dashboard screens](assets/preview.png)
+![Kiro Crew Term (v3) — design direction across the dashboard screens](.github/preview/preview.png)
 
 > **What this pack delivers today vs. the target.** This is a Kiro Crew *theme
 > pack*, so it can only change the **palette and fonts**, plus limited
@@ -64,7 +64,7 @@ terminal *structure* shown in the preview, install the companion **userstyle**:
 
 1. Install a userstyle manager — [Stylus](https://add0n.com/stylus.html)
    (Chrome/Firefox) is recommended.
-2. Open `userstyle/kirocrew-term.user.css` from this repo and install it
+2. Open `.github/userstyle/kirocrew-term.user.css` from this repo and install it
    (Stylus detects the `==UserStyle==` header), **or** paste its contents into a
    new Stylus style scoped to your dashboard origin.
 3. Adjust the `url-prefix(...)` lines at the top if your dashboard runs on a
@@ -86,7 +86,7 @@ The desktop app has no custom-CSS setting and can't load a Stylus userstyle, so
 use its **DevTools** instead (DevTools must be enabled):
 
 1. Open DevTools in the desktop app.
-2. Paste the contents of `userstyle/console-inject.js` into the **Console** and
+2. Paste the contents of `.github/userstyle/console-inject.js` into the **Console** and
    press Enter — the app goes flat/sharp immediately.
 3. Not persistent across restarts. To avoid re-pasting, save it once as a
    **DevTools Snippet** (Sources → Snippets) and run it after each launch.
