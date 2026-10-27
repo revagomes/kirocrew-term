@@ -12,6 +12,25 @@ mono-forward type system.
 - **Palettes:** `dark` (the v3 dark terminal) and `light` (the v3 light/safe
   variant).
 
+## Design direction
+
+The image below is the **target aesthetic** for the theme across the main
+dashboard screens — flat fills, 0px radius, hard 1px borders, ANSI accents, a
+`❯` prompt and block caret.
+
+![Kiro Crew Term (v3) — design direction across the dashboard screens](assets/preview.png)
+
+> **What this pack delivers today vs. the target.** This is a Kiro Crew *theme
+> pack*, so it can only change the **palette and fonts**, plus limited
+> structural CSS on a small set of runtime-allowlisted surfaces. The dashboard's
+> components (session cards, file tree, tab strips, status pills, the icon rail)
+> use framework-generated class names a theme pack cannot target, so their
+> **shape, radius, and layout stay as the dashboard draws them — only recolored
+> and re-fonted.** The flat/sharp terminal *structure* shown above is the
+> design goal; reaching it fully would require native shape/layout theming
+> support in the dashboard that does not exist yet. Install this for the v3
+> **color + type** experience; treat the mockup as the roadmap.
+
 ## Install
 
 Settings → Display → Install theme, then paste either:
